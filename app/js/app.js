@@ -3,6 +3,7 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
+  'mm.foundation',
   'ngRoute',
   'myApp.filters',
   'myApp.services',
