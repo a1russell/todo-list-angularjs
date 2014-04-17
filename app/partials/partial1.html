@@ -1,3 +1,12 @@
 <div class="row">
-  <p>This is the partial for view 1.</p>
+  <div class="columns">
+    <h1>To Do</h1>
+    <div data-ng-controller="TodoCtrl">
+      <ul class="no-bullet">
+        <li data-ng-repeat="task in tasks">
+          <span class="done-{{task.done}}">{{task.text}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

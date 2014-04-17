@@ -3,9 +3,10 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', [function() {
-
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+  .controller('TodoCtrl', ['$scope', '$http',
+    function($scope, $http) {
+      $http.get('http://localhost:8080/tasks').success(function(data) {
+        $scope.tasks = data;
+      });
+    }
+  ]);
