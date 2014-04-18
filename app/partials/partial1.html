@@ -12,18 +12,16 @@
         </div>
       </div>
     </form>
-    <div>
-      <ul class="no-bullet">
-        <li data-ng-repeat="task in tasks">
-          <label class="done-{{task.done}}">
-            <input type="checkbox"
-                   data-ng-model="task.done"
-                   ng-change="update(task)"/>
-            {{task.text}}
-          </label>
-        </li>
-      </ul>
-    </div>
+    <ul class="no-bullet">
+      <li data-ng-repeat="task in tasks">
+        <label class="done-{{task.done}}">
+          <input type="checkbox"
+                 data-ng-model="task.done"
+                 ng-change="update(task)"/>
+          {{task.text}}
+        </label>
+      </li>
+    </ul>
     <form data-ng-submit="purge()">
       <input class="button" type="submit" value="Clear Done"/>
     </form>
