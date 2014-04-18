@@ -15,7 +15,12 @@
     <div>
       <ul class="no-bullet">
         <li data-ng-repeat="task in tasks">
-          <span class="done-{{task.done}}">{{task.text}}</span>
+          <label class="done-{{task.done}}">
+            <input type="checkbox"
+                   data-ng-model="task.done"
+                   ng-change="update(task)"/>
+            {{task.text}}
+          </label>
         </li>
       </ul>
     </div>

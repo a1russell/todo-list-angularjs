@@ -19,5 +19,9 @@ angular.module('myApp.controllers', [])
           $scope.taskText = '';
         });
       };
+
+      $scope.update = function(task) {
+        $http.post(tasksEndpoint + "/update", task)
+      };
     }
   ]);
