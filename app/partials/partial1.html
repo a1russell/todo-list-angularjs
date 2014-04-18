@@ -22,6 +22,7 @@
         </label>
       </li>
     </ul>
+    <p data-ng-hide="tasks.length">You do not have anything to do!</p>
     <form data-ng-submit="purge()">
       <input class="button" type="submit" value="Clear Done"/>
     </form>
