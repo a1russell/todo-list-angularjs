@@ -23,5 +23,15 @@ angular.module('myApp.controllers', [])
       $scope.update = function(task) {
         $http.post(tasksEndpoint + "/update", task)
       };
+
+      $scope.purge = function() {
+        var oldTasks = $scope.tasks;
+        $scope.tasks = [];
+        $http.post(tasksEndpoint + "/purge", "").success(function() {
+          angular.forEach(oldTasks, function (todo) {
+            if (!todo.done) $scope.tasks.push(todo);
+          });
+        });
+      };
     }
   ]);
