@@ -15,7 +15,7 @@ angular.module('myApp.controllers', [])
       $scope.addTask = function() {
         var task = { 'text': $scope.taskText, 'done': false };
         $http.post(tasksEndpoint, task).success(function() {
-          $scope.tasks.push(task);
+          $scope.tasks.unshift(task);
           $scope.taskText = '';
         });
       };
